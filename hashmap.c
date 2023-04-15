@@ -66,7 +66,7 @@ void enlarge(HashMap * map) {
   map -> buckets = (Pair **) calloc(map -> capacity,sizeof(Pair*));
   map -> size = 0;
   for(int pos = 0 ; pos < old_capacity ; pos++){
-    if(old_buckets[pos] != NULL ){
+    if(old_buckets[pos] != NULL){
       insertMap(map,old_buckets[pos] -> key,old_buckets[pos] -> value);
     }
   }
@@ -130,7 +130,7 @@ Pair * nextMap(HashMap * map) {
   int pos = (map -> current + 1) % map -> capacity;
 
   while(pos != map -> current){
-    if(map -> buckets[pos] != NULL && map -> buckets[pos] -> key != NULL){
+    if(map -> buckets[pos] != NULL){
       map -> current = pos;
       return map -> buckets[pos];
     }
