@@ -97,7 +97,7 @@ Pair * searchMap(HashMap * map,  char * key) {
   int pos = hash(key, map -> capacity);
   int inicio = pos;
   
- /*while(pos != inicio){
+  while(true){
     if(map -> buckets[pos] == NULL){
       map -> current = pos;
       return NULL;
@@ -109,9 +109,12 @@ Pair * searchMap(HashMap * map,  char * key) {
     else{
       pos = ((pos + 1) % map -> capacity);
     {
-  }*/
+    if(pos == inicio){
+       break;   
+    }
+  }
 
-  do{
+  /*do{
     if(map -> buckets[pos] == NULL){
       map -> current = pos;
       return NULL;
@@ -123,7 +126,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     else{
       pos = ((pos + 1) % map -> capacity);
     {
-  }while(pos != inicio);
+  }while(pos != inicio);*/
 
   map -> size++;
   map -> current = pos;
