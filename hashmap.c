@@ -77,7 +77,10 @@ HashMap * createMap(long capacity) {
 
 void eraseMap(HashMap * map,  char * key) {    
   int pos = hash(key, map -> capacity);
-  
+
+  if(map -> buckets[pos] == NULL){
+    return;
+  }
 
 }
 
