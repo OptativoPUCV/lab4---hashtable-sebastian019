@@ -119,9 +119,6 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
   int pos = (map -> current + 1) % map -> capacity;
 
-  if(map -> size == 0){
-    return NULL;
-  }
   while(pos != map -> current){
     if(pos == map -> current){
       pos = 0;
