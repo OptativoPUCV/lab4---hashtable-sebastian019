@@ -123,7 +123,7 @@ Pair * nextMap(HashMap * map) {
     if(pos == map -> current){
       pos = 0;
     }
-    if(map -> buckets[pos] != NULL && map -> buckets[pos] -> key != NULL){
+    if(map -> buckets[pos] -> key != NULL){
       map -> current = pos;
       return map -> buckets[pos];
     }
