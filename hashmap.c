@@ -45,7 +45,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   while(map -> buckets[pos] != NULL && strcmp(map->buckets[pos] -> key, key) != 0){
     pos = ((pos + 1) % map -> capacity);
   }
-  if(map -> buckets[pos] != NULL || map -> buckets[pos] -> key == NULL){
+  if(map -> buckets[pos] == NULL){
     Pair * Valor = createPair(key, value);
     map -> buckets[pos] = Valor;
     map -> size++;
