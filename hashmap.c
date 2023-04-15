@@ -96,16 +96,11 @@ Pair * searchMap(HashMap * map,  char * key) {
   int pos = hash(key, map -> capacity);
   int inicio = pos;
   
-  while(pos != inicio){
-    if(map -> buckets[pos] == NULL){
-      map -> current = pos;
+  while(map -> buckets[pos] != NULL && strcmp(map->buckets[pos] -> key, key) != 0){
+    pos = ((pos + 1) % map -> capacity);
+    if(inicio == pos){
       return NULL;
     }
-    else if(strcmp(map -> buckets[pos] -> key, key) == 0){
-      map -> current = pos;
-      return map -> buckets[pos];
-    }
-    pos = ((pos + 1) % map -> capacity);
   }
   map -> current = pos;
   return map -> buckets[pos];
