@@ -107,8 +107,11 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-
-    return NULL;
+  int pos = hash(key, map -> capacity);
+  if(map -> buckets[pos] != NULL){
+    return map -> buckets[pos];
+  }
+  return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
