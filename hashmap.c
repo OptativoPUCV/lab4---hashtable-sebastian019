@@ -117,7 +117,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-  int pos = map -> current + 1;
+  int pos = (map -> current + 1) % map -> capacity;
   
   while(pos != map -> current){
     if(pos == map -> current){
