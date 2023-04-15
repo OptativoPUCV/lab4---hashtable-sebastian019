@@ -514,3 +514,9 @@ hashmap.c:110:18: error: ‘key’ undeclared (first use in this function); did 
 hashmap.c:110:18: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 1638899
+Sat 15 Apr 2023 07:23:24 PM UTC: 
+ hashmap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+ tests:  12|2
+total_score: 50/70
+a646b1b

@@ -107,10 +107,16 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-  int pos = hash(key, map -> capacity);
-  if(map -> buckets[pos] != NULL){
-    return map -> buckets[pos];
+  int pos = 0;
+  
+  while(map -> buckets[pos] != NULL){
+    if(map -> buckets[pos] != NULL){
+      return map -> buckets[pos];
+    }
+    pos = ((pos + 1) % map -> capacity);
   }
+  
+  
   return NULL;
 }
 
