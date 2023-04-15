@@ -76,7 +76,8 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-
+  int pos = hash(key, map -> capacity);
+  
 
 }
 
@@ -112,7 +113,8 @@ Pair * searchMap(HashMap * map,  char * key) {
       pos = ((pos + 1) % map -> capacity);
     {
   }while(pos != inicio);
-      
+
+  map -> size++;
   map -> current = pos;
   return NULL;
 }
