@@ -117,6 +117,11 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-
-    return NULL;
+  for(int pos = 0 ; pos < map -> capacity ; pos++){
+    if(map -> buckets[pos] != NULL && map -> buckets[pos] -> key != NULL){
+      map-> current = pos;
+      return map -> buckets[pos];
+    }
+  }
+  return NULL;
 }
