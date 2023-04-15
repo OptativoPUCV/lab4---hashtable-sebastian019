@@ -70,7 +70,7 @@ void enlarge(HashMap * map) {
       insertMap(map,old_buckets[pos] -> key,old_buckets[pos] -> value);
     }
   }
-  //enlarge_called = 1; //no borrar (testing purposes)
+  enlarge_called = 1; //no borrar (testing purposes)
 }
 
 
