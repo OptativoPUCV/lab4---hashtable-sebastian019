@@ -77,6 +77,7 @@ HashMap * createMap(long capacity) {
 
 void eraseMap(HashMap * map,  char * key) {    
   int pos = hash(key, map -> capacity);
+  int inicio = pos;
 
   while(map -> buckets[pos] != NULL){
     if(strcmp(map -> buckets[pos] -> key, key) == 0){
@@ -85,6 +86,9 @@ void eraseMap(HashMap * map,  char * key) {
       return;
     }
      pos = ((pos + 1) % map -> capacity);
+    if(pos == inicio){
+      break;
+    }
   }
 }
 
