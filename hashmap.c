@@ -118,7 +118,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
   for(int pos = 0 ; pos < map -> capacity ; pos++){
-    if(map -> buckets[pos] != NULL && map -> buckets[pos] -> key != NULL){
+    if(map -> buckets[pos] != NULL ){
       map-> current = pos;
       return map -> buckets[pos];
     }
