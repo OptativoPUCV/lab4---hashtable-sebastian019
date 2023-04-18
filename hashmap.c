@@ -127,7 +127,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map){
-  for(int pos = map -> current + 1 ; pos < map -> size ; pos++){
+  for(int pos = 0 ; pos < map -> size ; pos++){
     if(map -> buckets[pos] != NULL && map -> buckets[pos] -> key != NULL){
       map -> current = pos;
       return map -> buckets[pos];
