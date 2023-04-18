@@ -118,7 +118,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
   for(int pos = 0 ; pos < map -> capacity ; pos++){
-    if(map -> buckets[pos] != NULL ){
+    if(map -> buckets[pos] != NULL){
       map-> current = pos;
       return map -> buckets[pos];
     }
@@ -127,7 +127,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-  int pos = (map -> current + 1) % map -> capacity;
+  int pos = (map -> current) % map -> capacity;
 
   while(pos != map -> current){
     if(map -> buckets[pos] != NULL){
