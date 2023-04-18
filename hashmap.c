@@ -126,15 +126,12 @@ Pair * firstMap(HashMap * map) {
   return NULL;
 }
 
-Pair * nextMap(HashMap * map) {
-  int pos = (map -> current + 1) % map -> capacity;
-
-  while(pos != map -> current){
+Pair * nextMap(HashMap * map){
+  for(int pos = map -> current + 1 ; pos < map -> size ; pos++){
     if(map -> buckets[pos] != NULL){
       map -> current = pos;
       return map -> buckets[pos];
     }
-    pos = ((pos + 1) % map -> capacity);
   }
   return NULL;
 }
