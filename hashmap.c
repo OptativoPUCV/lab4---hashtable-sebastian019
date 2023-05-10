@@ -135,6 +135,6 @@ Pair * nextMap(HashMap * map){
       return map -> buckets[pos];
     }
   }
-   map -> current = -1;
+   //map -> current = -1;
   return NULL;
 }
