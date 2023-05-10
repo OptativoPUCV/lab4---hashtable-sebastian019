@@ -132,7 +132,7 @@ Pair * nextMap(HashMap * map){
   for(int pos = map->current + 1 ; pos < map -> size ; pos++){
     if(map -> buckets[pos] != NULL && map -> buckets[pos] -> key != NULL){
       map -> current = pos;
-      return map -> buckets[pos];
+      return *(map -> buckets+pos);
     }
   }
    map -> current = -1;
