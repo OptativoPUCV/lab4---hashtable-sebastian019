@@ -117,13 +117,15 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-  for(int pos = 0 ; pos < map -> size ; pos++){
-    if(map -> buckets[pos] != NULL){
-      map-> current = pos;
-      return map -> buckets[pos];
+  int i = 0;
+  while(map->buckets[i] != NULL || map -> buckets[i] -> key != NULL){
+    i++;
+    if( i >= map -> capacity){
+      return NULL;
     }
   }
-  return NULL;
+  map -> current = i;
+  return map -> buckets[i];
 }
 
 Pair * nextMap(HashMap * map){
